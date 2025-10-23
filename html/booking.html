@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prenota Visita - Poliambulatorio Alpha</title>
+    <link rel="stylesheet" href="../Css/booking .css">
+    <script src="js/data.js"></script>
+    <script defer src="js/script.js"></script>
+</head>
+    <!-- Pagina di Prenotazione - CUORE DEL SITO -->
+
+<body>
+
+    <header>
+        <h1>Poliambulatorio Alpha</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Servizi</a></li>
+                <li><a href="booking.html" class="cta">Prenota Visita</a></li>
+                <li><a href="mybookings.html">Le Mie Prenotazioni</a></li>
+                <li><a href="contact.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Prenotazione Visita Specialistica</h2>
+
+        <div class="booking-form-container">
+            <form id="prenotazioneForm">
+
+                <fieldset>
+                    <legend>Step 1: Scegli la Specialità</legend>
+                    <label for="specialita">Specialità:</label>
+                    <select id="specialita" required>
+                        <option value="">Seleziona una specialità</option>
+                    </select>
+                </fieldset>
+
+                <fieldset id="medicoFieldset" disabled>
+                    <legend>Step 2: Scegli il Medico</legend>
+                    <label for="medico">Medico Specialista:</label>
+                    <select id="medico" required>
+                        <option value="">Seleziona un medico</option>
+                    </select>
+                    <p id="medico-info" style="margin-top: 10px; font-style: italic;"></p>
+                </fieldset>
+
+                <fieldset id="datetimeFieldset" disabled>
+                    <legend>Step 3: Scegli Data e Orario</legend>
+                    
+                    <div>
+                        <label for="data-visita">Data:</label>
+                        <input type="date" id="data-visita" required>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <label>Orari Disponibili:</label>
+                        <div id="slot-orari" class="time-slots">
+                            <p>Seleziona una data per visualizzare gli orari.</p>
+                        </div>
+                        <input type="hidden" id="orario-selezionato" name="orario" required>
+                    </div>
+                </fieldset>
+
+                <fieldset id="datiPazienteFieldset" disabled>
+                    <legend>Step 4: I Tuoi Dati</legend>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" required>
+
+                    <label for="cognome">Cognome:</label>
+                    <input type="text" id="cognome" required>
+
+                    <label for="telefono">Telefono:</label>
+                    <input type="tel" id="telefono" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </fieldset>
+
+                <div style="margin-top: 30px;">
+                    <button type="submit" class="button-primary">Conferma Prenotazione</button>
+                </div>
+
+                <div id="messaggio-risposta" style="margin-top: 20px; padding: 10px; border-radius: 4px; display: none;"></div>
+
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Poliambulatorio Alpha. P.IVA 1234567890</p>
+        <p>Indirizzo: Via Roma, 1 - Città | Tel: 02 1234567</p>
+    </footer>
+<script src="../JS/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Poliambulatorio Alpha - La tua salute al primo posto</title>
+    <link rel="stylesheet" href="../Css/index.css">
+</head>
+
+<body>
+    <!-- (Home Page) -->
+
+        <header>
+            <div class="logo">
+                <a href="index.html"><img class="logo" src="../asset/LOGO (2).png" alt="Logo Poliambulatorio Alpha"></a>
+                <h1>Poliambulatorio Alpha</h1>
+                <p>La tua salute al primo posto</p>
+
+            </div>
+            <br>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Servizi</a></li>
+                    <li><a href="booking.html" class="cta">Prenota Visita</a></li>
+                    <li><a href="mybookings.html">Le Mie Prenotazioni</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="select-dr">
+                <h2>Prenota la tua visita online!</h2>
+                <div class="search-visual">
+
+            <!-- Barra di ricerca rapida: tipo visita + campi + bottone Cerca -->
+            <div class="search-toolbar" role="search" aria-label="Ricerca rapida">
+            <!-- Ricerca + immagine affiancate -->
+                <div class="visit-type-tabs" role="tablist" aria-label="Tipo di visita">
+                    <button class="tab active" role="tab" aria-selected="true" data-type="studio">
+                        <span class="icon" aria-hidden="true">🏢</span>
+                        <span>In studio</span>
+                    </button>
+                    <button class="tab" role="tab" aria-selected="false" data-type="online">
+                        <span class="icon" aria-hidden="true">🎥</span>
+                        <span>Online</span>
+                    </button>
+                    <button class="tab" role="tab" aria-selected="false" data-type="farmacie">
+                        <span class="icon" aria-hidden="true">💊</span>
+                        <span>Farmacie</span>
+                    </button>
+                </div>
+
+                <form class="search-row" id="quickSearchForm">
+                    <div class="input-wrapper">
+                        <input type="text" class="search-input" placeholder="es. prestazione, medico, struttura"
+                            aria-label="Prestazione, medico o struttura">
+                        <button type="button" class="dropdown-toggle" aria-label="Opzioni avanzate">▾</button>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <input type="text" class="search-input" placeholder="es: Roma" aria-label="Città o CAP">
+                        <button type="button" class="dropdown-toggle" aria-label="Seleziona zona">▾</button>
+                    </div>
+
+                    <button type="submit" class="search-btn">
+                        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span>Cerca</span>
+                    </button>
+                </form>
+            </div>
+            <!-- /barra di ricerca rapida -->
+                <figure class="visual-col">
+                    <img class="image-group" src="../asset/11.png" alt="Cura Specialistica" />
+                </figure>
+                </div>
+                <!-- /search-visual -->
+            <div id="modificaModal" class="modal" style="display:none;">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h3>Modifica Prenotazione</h3>
+                    <p>Stai modificando la visita con: <strong id="modifica-medico-nome"></strong> (<span
+                            id="modifica-specialita"></span>)</p>
+
+                    <form id="modificaForm">
+                        <input type="hidden" id="modifica-id">
+                        <input type="hidden" id="modifica-medico-id">
+
+                        <fieldset>
+                            <legend>Nuova Data</legend>
+                            <label for="modifica-data">Data:</label>
+                            <input type="date" id="modifica-data" required>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Nuovo Orario</legend>
+                            <div id="modifica-slot-orari" class="time-slots">
+                            </div>
+                            <input type="hidden" id="modifica-orario-selezionato" required>
+                        </fieldset>
+
+                        <button type="submit" class="button-primary">Salva Modifica</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <main id="homepage">
+            <section class="hero">
+                <h2>Cura Specialistica a Portata di Click</h2>
+                <p>Prenota la tua visita specialistica scegliendo il medico, la data e l'ora che preferisci, senza
+                    attese.</p>
+                <a href="booking.html" class="button-primary">Inizia la Prenotazione Ora</a>
+            </section>
+
+            <section class="services-preview">
+                <h3>Le Nostre Specialità Principali</h3>
+                <ul>
+                    <li>Cardiologia</li>
+                    <li>Dermatologia</li>
+                    <li>Ortopedia</li>
+                    <li>Oculistica</li>
+                    <li>Psicologia</li>
+                    <li>Urologia</li>
+
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Poliambulatorio Alpha. P.IVA 1234567890</p>
+            <p>Indirizzo: Via Roma, 1 - Città | Tel: 02 1234567</p>
+        </footer>
+        <!-- Script locale per il comportamento della barra di ricerca -->
+        <script>
+            (function () {
+                const tabs = document.querySelectorAll('.search-toolbar .tab');
+                tabs.forEach(btn => btn.addEventListener('click', () => {
+                    tabs.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-selected', 'true');
+                }));
+                const form = document.getElementById('quickSearchForm');
+                if (form) {
+                    form.addEventListener('submit', function (e) { e.preventDefault(); /* TODO: integrare ricerca */ });
+                }
+            })();
+        </script>
+        <script src="../JS/script.js"></script>
+        <script src="../JS/data.js"></script>
+        <script src="../JS/booking.js"></script>
+    </body>
+
+</html>

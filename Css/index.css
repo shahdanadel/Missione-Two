@@ -1,0 +1,218 @@
+/* css/style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #38cec6; 
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 10;
+}
+img.logo {
+    height: 250px;
+    -webkit-filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.25));
+            filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.25));
+
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.cta {
+    background-color: #28a745; /* Verde per l'azione */
+    font-weight: bold;
+}
+section.select-dr {
+    /* margin: 20px; */
+    /* padding: 20px; */
+    background-color: #38cec6;
+    /* border-radius: 8px; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+img.image-group {
+    display: flex;
+    justify-content: right;
+    height: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Stili per la pagina di prenotazione */
+.booking-form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* --- Search toolbar (home) --- */
+.search-toolbar {
+    background: #38cec6; /* requested teal */
+    border-radius: 10px;
+    /* Uses alpha channel of PNG/SVG for a soft, shape-following shadow */
+    -webkit-filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.25));
+            filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.25));
+    padding: 16px;
+    margin: 16px 0 24px;
+    color: #fff;
+}
+
+/* Container to place search section and illustration side-by-side */
+.search-visual {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-visual .search-toolbar { flex: 1 1 60%; }
+.search-visual .visual-col { flex: 1 1 40%; display: flex; justify-content: flex-end; }
+
+img.image-group {
+    max-width: 100%;
+    height: auto;
+    max-height: 420px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+    .search-visual { flex-direction: column; }
+    .search-visual .visual-col { justify-content: center; }
+}
+
+.visit-type-tabs {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.visit-type-tabs .tab {
+    appearance: none;
+    background: transparent;
+    color: #eafffb;
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 28px;
+    padding: 8px 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.visit-type-tabs .tab.active {
+    background: #ffffff;
+    color: #0ea89a;
+    border-color: #ffffff;
+}
+
+.visit-type-tabs .tab .icon { line-height: 1; }
+
+.search-row {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.input-wrapper {
+    position: relative;
+    flex: 1 1 260px;
+    min-width: 220px;
+}
+
+.search-input {
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    border: none;
+    padding: 0 40px 0 14px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08) inset;
+}
+
+.dropdown-toggle {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 32px;
+    width: 32px;
+    border: none;
+    background: transparent;
+    color: #7a7a7a;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.search-btn {
+    background: #3b82f6; /* blue */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 48px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.search-btn:hover { background: #2563eb; }
+
+.search-icon { display: block; }
+
+@media (max-width: 640px) {
+    .search-row { gap: 8px; }
+    .search-btn { width: 100%; justify-content: center; }
+}
